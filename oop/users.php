@@ -1,5 +1,13 @@
 <?php
-class User{
+interface ISuperUser{
+  function getInfo();
+}
+
+abstract class UserAbstract{
+  abstract function showInfo();
+}
+
+class User extends UserAbstract{
   public $name, $login, $password;
 
   function __construct($name, $login, $password){
@@ -17,7 +25,7 @@ class User{
   }
 }
 
-class SuperUser extends User{
+class SuperUser extends User implements ISuperUser{
   public $role;
   function __construct($n, $l, $p, $r){
     parent::__construct($n, $l, $p);
@@ -27,7 +35,17 @@ class SuperUser extends User{
     parent::showInfo();
     echo "Role: {$this->role}\n";
   }
+//getInfo returns assoc array with elem_name = prop and values = prop_values
+  function getInfo(){
+    $getInfo;
+    foreach($this as $name => $value){
+      $getInfo = $this;
+    }
+    return $getInfo;
+  }
 }
+
+
 
 $user1 = new User('Nikolay','Kolyan1','123\@AF');
 $user1->showInfo();
@@ -40,6 +58,8 @@ $user3->showInfo();
 
 $user4 = new SuperUser('Vasya Pupkin', 'vasyap','0000','admin');
 $user4->showInfo();
+echo '<pre>';
+print_r($user4->getInfo());
 
 
 
