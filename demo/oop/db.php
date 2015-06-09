@@ -1,6 +1,8 @@
 <?php
 
-interface Db{
+
+
+/*interface Db{
   function connect();
   function close();
   //.....
@@ -15,4 +17,4 @@ class A implements Db, X{
   function close(){}
 }
 
-$a = new A();
+$a = new A();*/
