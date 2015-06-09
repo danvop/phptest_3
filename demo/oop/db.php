@@ -1,7 +1,8 @@
 <?php
+sfdf
+fd
 
-
-
+d
 /*interface Db{
   function connect();
   function close();
