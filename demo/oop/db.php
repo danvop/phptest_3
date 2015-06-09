@@ -1,8 +1,5 @@
 <?php
-sfdf
-fd
 
-d
 /*interface Db{
   function connect();
   function close();
@@ -19,3 +16,4 @@ class A implements Db, X{
 }
 
 $a = new A();*/
+  
