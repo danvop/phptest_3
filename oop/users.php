@@ -2,6 +2,7 @@
 function __autoload($name){
   require "$name.class.php";
 }
+
 $user1 = new User('Nikolay','Kolyan1','123\@AF');
 $user1->showInfo();
 
