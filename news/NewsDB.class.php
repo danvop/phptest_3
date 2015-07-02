@@ -37,8 +37,23 @@ class NewsDB implements INewsDB{
   function __destruct(){
     unset($this->_db);
   }
-  function saveNews($title, $category, $description, $source){}
+  function saveNews($title, $category, $description, $source){
+    $dt = time();
+    $sql = "INSERT INTO msgs (title, category, 
+                             description, source, datetime)
+      VALUES('$title', $category, '$description', '$source',
+             $dt)";
+    return $this->_db->exec($sql);
+    
+  }
   function getNews(){}
   function deleteNews($id){}
+  function clearStr($data){
+    $data = strip_tags($data);
+    return $this->_db->escapeString($data);
+  }
+  function clearInt($data){
+    return abs((int)$data);
+  }
 }
 
