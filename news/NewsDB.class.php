@@ -46,7 +46,9 @@ class NewsDB implements INewsDB{
     return $this->_db->exec($sql);
     
   }
-  function getNews(){}
+  function getNews(){
+    $sql = "";
+  }
   function deleteNews($id){}
   function clearStr($data){
     $data = strip_tags($data);
