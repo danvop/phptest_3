@@ -8,10 +8,6 @@
   //echo $root->textContent;
   $books = $root->childNodes;
   //var_dump($books);
-  foreach($books as $book){
-    echo $book->textContent;
-    echo "<hr>";
-  }
 ?>
 <html>
 
@@ -30,6 +26,17 @@
     </tr>
     <?php 
       //Парсинг 
+       foreach($books as $book){
+         if($book->nodeType == 1){
+          echo "<tr>";
+           foreach($book->childNodes as $item){
+             if ($item->nodeType == 1){
+               echo "<td>$item->textContent</td>";
+             }
+           }
+          echo "</tr>";
+         }
+        }
     ?>
   </table>
 </body>
