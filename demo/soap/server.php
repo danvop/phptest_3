@@ -16,11 +16,6 @@
       //throw new SoapFault("Server", "Несуществующий id товара");
     }	
   }
-//testing function--------
-echo getStock("b");
-echo getStock("z");
-exit;
-//-----end testing-------
 // Отключение кэширования WSDL-документа
 ini_set("soap.wsdl_cache_enabled", "0");
 // Создание SOAP-сервер
