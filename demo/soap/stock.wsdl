@@ -9,10 +9,10 @@
 		xmlns='http://schemas.xmlsoap.org/wsdl/'> 
 
 	<message name='getStockRequest'> 
-		<part name='id' type='xsd:string'/> 
+		<part name='shelf_name' type='xsd:string'/> 
 	</message> 
 	<message name='getStockResponse'> 
-		<part name='Result' type='xsd:integer'/> 
+		<part name='quantity' type='xsd:integer'/> 
 	</message> 
 
 	<portType name='StockPortType'> 
