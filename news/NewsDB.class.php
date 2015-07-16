@@ -8,7 +8,7 @@ class NewsDB implements INewsDB{
   private $_db = null;
 
   function __get($name){
-    if($name == 'db')
+    if($name == '_db')
       return $this->_db;
     throw new Exception('Unknown property!');
   }
