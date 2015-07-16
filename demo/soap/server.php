@@ -12,8 +12,8 @@
       $quantity = $stock[$id];		
       return $quantity;
     } else {
-      return 0;
-      //throw new SoapFault("Server", "Несуществующий id товара");
+      //return 0;
+      throw new SoapFault("Server", "Несуществующий id товара");
     }	
   }
 // Отключение кэширования WSDL-документа
