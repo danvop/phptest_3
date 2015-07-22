@@ -6,7 +6,7 @@ class NewsService extends NewsDB{
 		try{
 			$sql = "SELECT id, title, 
 					(SELECT name FROM category WHERE category.id=msgs.category) as category, description, source, datetime 
-					FROM msgsa
+					FROM msgs
 					WHERE id = $id";
 			$result = $this->_db->query($sql);
 			if (!is_object($result)) 
@@ -41,3 +41,11 @@ class NewsService extends NewsDB{
 		}
 	}
 }
+// Отключение кеширования wsdl-документа 
+ini_set("soap.wsdl_cache_enabled", "0"); 
+// Создание SOAP-сервера 
+$server = new SoapServer("http://localhost/php-3/soap/news.wsdl"); 
+// Регистрация класса 
+$server->setClass("NewsService"); 
+// Запуск сервера 
+$server->handle();
